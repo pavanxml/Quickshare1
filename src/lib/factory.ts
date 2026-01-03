@@ -14,8 +14,7 @@ export function getAdapter(): StorageAdapter {
             console.log("Using Redis Adapter");
         } catch (e) {
             console.error("Failed to initialize Redis adapter", e);
-            // Fallback to SQLite if Redis fails? Or Memory?
-            // Let's fallback to SQLite.
+            // Fallback to SQLite if Redis fails
             try {
                 adapter = new SqliteAdapter();
                 console.log("Fallback to SQLite Adapter");
