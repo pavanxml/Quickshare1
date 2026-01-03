@@ -16,6 +16,9 @@ export class RedisAdapter implements StorageAdapter {
         const pasteData = {
             id,
             content: options.content,
+            type: options.type || 'text',
+            file_url: options.file_url,
+            mime_type: options.mime_type,
             created_at: now,
             expires_at: options.ttl_seconds ? now + options.ttl_seconds * 1000 : null,
             initial_views: options.max_views ?? null,

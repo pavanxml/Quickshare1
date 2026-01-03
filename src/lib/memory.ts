@@ -11,6 +11,9 @@ export class MemoryAdapter implements StorageAdapter {
         const paste: Paste = {
             id,
             content: options.content,
+            type: options.type || 'text',
+            file_url: options.file_url,
+            mime_type: options.mime_type,
             views_left: options.max_views ?? null,
             initial_views: options.max_views ?? null,
             expires_at: options.ttl_seconds ? now + options.ttl_seconds * 1000 : null,
